@@ -18,11 +18,13 @@ public class LinkedList {
 		
 		if(this.head==null) {
 			this.head=newNode;
+			this.tail = newNode;
 		}else {
 			while(curNode.next!=null) {
 				curNode = curNode.next;
 			}
 			curNode.next = newNode;
+			this.tail = newNode;
 		}
 	}
 	
@@ -104,10 +106,10 @@ public class LinkedList {
 	public static void main(String[] args) {
 		
 			LinkedList list = new LinkedList();
-			list.append(5);
-			list.append(10);
+			list.appendNoTail(5);
+			list.appendNoTail(10);
 			list.append(15);
-			list.append(25);
+			list.appendNoTail(25);
 			list.show();
 			list.delete(15);
 			list.append(40);
